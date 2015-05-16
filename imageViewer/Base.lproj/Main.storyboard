@@ -8,13 +8,13 @@
         <!--Photos-->
         <scene sceneID="Bjl-ts-2Ze">
             <objects>
-                <tableViewController id="t5C-rL-Hnh" sceneMemberID="viewController">
+                <tableViewController id="t5C-rL-Hnh" customClass="ImageViewerTableViewController" customModule="imageViewer" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Uc-E9-sfn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zVq-Ev-dnH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoCell" id="zVq-Ev-dnH">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVq-Ev-dnH" id="t0t-kv-GC6">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="270" y="-251"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="32M-bt-qM6">
             <objects>
-                <viewController id="0Sh-CV-a1I" sceneMemberID="viewController">
+                <viewController id="0Sh-CV-a1I" customClass="DisplayViewController" customModule="imageViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R3k-LO-AYh"/>
                         <viewControllerLayoutGuide type="bottom" id="yrA-nf-U3N"/>
@@ -72,15 +72,18 @@
                             <constraint firstItem="aGh-HT-YRz" firstAttribute="leading" secondItem="Eoi-Sz-jRx" secondAttribute="leading" id="sMf-Ax-RA0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="uiImgeView" destination="aGh-HT-YRz" id="RdE-Pk-BKc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKF-Z4-zno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="-251"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="fqn-de-9ne">
             <objects>
-                <viewController id="VrR-8K-Juz" sceneMemberID="viewController">
+                <viewController id="VrR-8K-Juz" customClass="InfoViewController" customModule="imageViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tn3-UK-9Jn"/>
                         <viewControllerLayoutGuide type="bottom" id="xIS-Qi-ClT"/>
@@ -89,8 +92,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cy-TT-5s8">
-                                <rect key="frame" x="16" y="394" width="568" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cy-TT-5s8">
+                                <rect key="frame" x="16" y="45" width="568" height="402"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,24 +101,30 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-tD-vAH">
                                 <rect key="frame" x="285" y="483" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="72I-FK-k28"/>
+                                    <constraint firstAttribute="height" constant="30" id="tHg-qB-shD"/>
                                 </constraints>
                                 <state key="normal" title="ok">
                                     <color key="titleColor" red="0.78330684732001932" green="1" blue="0.92860858507668587" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnOK:" destination="VrR-8K-Juz" eventType="touchUpInside" id="rdC-x8-JvN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21586326436507597" green="0.63071601681654543" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OHV-tD-vAH" firstAttribute="top" secondItem="2cy-TT-5s8" secondAttribute="bottom" constant="36" id="RAP-Tc-f8x"/>
-                            <constraint firstItem="2cy-TT-5s8" firstAttribute="top" secondItem="Tn3-UK-9Jn" secondAttribute="bottom" constant="374" id="Tio-a4-PK3"/>
-                            <constraint firstItem="xIS-Qi-ClT" firstAttribute="top" secondItem="OHV-tD-vAH" secondAttribute="bottom" constant="87" id="ftX-BQ-gUW"/>
-                            <constraint firstItem="2cy-TT-5s8" firstAttribute="centerX" secondItem="OHV-tD-vAH" secondAttribute="centerX" id="gil-Ng-VP4"/>
-                            <constraint firstItem="2cy-TT-5s8" firstAttribute="leading" secondItem="dTQ-Ke-jr3" secondAttribute="leadingMargin" id="vfe-aP-FJb"/>
-                            <constraint firstItem="2cy-TT-5s8" firstAttribute="trailing" secondItem="dTQ-Ke-jr3" secondAttribute="trailingMargin" id="wka-hR-mXj"/>
+                            <constraint firstItem="2cy-TT-5s8" firstAttribute="leading" secondItem="dTQ-Ke-jr3" secondAttribute="leadingMargin" id="2RY-tQ-ety"/>
+                            <constraint firstItem="OHV-tD-vAH" firstAttribute="top" secondItem="2cy-TT-5s8" secondAttribute="bottom" constant="36" id="9s9-ez-dpw"/>
+                            <constraint firstItem="2cy-TT-5s8" firstAttribute="trailing" secondItem="dTQ-Ke-jr3" secondAttribute="trailingMargin" id="biC-SM-uQO"/>
+                            <constraint firstItem="xIS-Qi-ClT" firstAttribute="top" secondItem="OHV-tD-vAH" secondAttribute="bottom" constant="87" id="eRY-7q-xy5"/>
+                            <constraint firstItem="OHV-tD-vAH" firstAttribute="centerX" secondItem="2cy-TT-5s8" secondAttribute="centerX" id="o2T-bA-T6e"/>
+                            <constraint firstItem="2cy-TT-5s8" firstAttribute="top" secondItem="Tn3-UK-9Jn" secondAttribute="bottom" constant="25" id="xdH-eV-TbU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblDetails" destination="2cy-TT-5s8" id="aWl-dD-5sN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AB0-Rz-JaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

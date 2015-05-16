@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C55C357A1B0749A500920C82 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55C35791B0749A500920C82 /* InfoViewController.swift */; };
 		C5A656141B06424F006688AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A656131B06424F006688AE /* AppDelegate.swift */; };
 		C5A656191B06424F006688AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A656171B06424F006688AE /* Main.storyboard */; };
 		C5A6561B1B06424F006688AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A6561A1B06424F006688AE /* Images.xcassets */; };
@@ -15,7 +16,6 @@
 		C5A656341B064C8F006688AE /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A656331B064C8F006688AE /* ImageViewer.swift */; };
 		C5A6563E1B06518F006688AE /* ImageViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6563D1B06518F006688AE /* ImageViewerTableViewController.swift */; };
 		C5A656401B06520F006688AE /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A6563F1B06520F006688AE /* DisplayViewController.swift */; };
-		C5A656441B06525A006688AE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A656431B06525A006688AE /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C55C35791B0749A500920C82 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		C5A6560E1B06424F006688AE /* imageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A656121B06424F006688AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5A656131B06424F006688AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		C5A656331B064C8F006688AE /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		C5A6563D1B06518F006688AE /* ImageViewerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerTableViewController.swift; sourceTree = "<group>"; };
 		C5A6563F1B06520F006688AE /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
-		C5A656431B06525A006688AE /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,6 @@
 		C5A656051B06424F006688AE = {
 			isa = PBXGroup;
 			children = (
-				C5A656431B06525A006688AE /* InfoViewController.swift */,
 				C5A656331B064C8F006688AE /* ImageViewer.swift */,
 				C5A656101B06424F006688AE /* imageViewer */,
 				C5A656261B064250006688AE /* imageViewerTests */,
@@ -89,6 +88,7 @@
 				C5A656171B06424F006688AE /* Main.storyboard */,
 				C5A6563D1B06518F006688AE /* ImageViewerTableViewController.swift */,
 				C5A6563F1B06520F006688AE /* DisplayViewController.swift */,
+				C55C35791B0749A500920C82 /* InfoViewController.swift */,
 				C5A6561A1B06424F006688AE /* Images.xcassets */,
 				C5A6561C1B06424F006688AE /* LaunchScreen.xib */,
 				C5A656111B06424F006688AE /* Supporting Files */,
@@ -225,7 +225,7 @@
 				C5A6563E1B06518F006688AE /* ImageViewerTableViewController.swift in Sources */,
 				C5A656141B06424F006688AE /* AppDelegate.swift in Sources */,
 				C5A656401B06520F006688AE /* DisplayViewController.swift in Sources */,
-				C5A656441B06525A006688AE /* InfoViewController.swift in Sources */,
+				C55C357A1B0749A500920C82 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

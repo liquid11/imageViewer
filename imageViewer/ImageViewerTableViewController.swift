@@ -9,10 +9,29 @@
 import UIKit
 
 class ImageViewerTableViewController: UITableViewController {
-
+var photos = [Photo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var newPhoto = Photo(name: "Morning grass", filename: "morningrass", notes: "morning grass photo")
+        
+    photos.append(newPhoto)
+        
+         newPhoto = Photo(name: "norway mountain river", filename: "norway", notes: "norway fjord scenes ")
+        
+        photos.append(newPhoto)
+       
+         newPhoto = Photo(name: "norway mountain ", filename: "norway1", notes: "another mountain scene")
+        
+        photos.append(newPhoto)
+        
+        newPhoto = Photo(name: "cliff ", filename: "norway2", notes: "man standing on the edge of the cliff ")
+        
+        photos.append(newPhoto)
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,24 +49,26 @@ class ImageViewerTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return photos.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        var photocell = photos[indexPath.row]
 
+        cell.textLabel?.text = photocell.name
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,14 +105,23 @@ class ImageViewerTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+    
+    var secondViewController  = segue.destinationViewController as DisplayViewController
+        if let indexPath = self.tableView.indexPathForSelectedRow(){
+        
+        let selectedPhoto = photos[indexPath.row]
+         secondViewController.currentPhoto = selectedPhoto
+            
+        }
+        
     }
-    */
+
 
 }
